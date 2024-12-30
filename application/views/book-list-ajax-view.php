@@ -1,3 +1,9 @@
+<!-- 
+	Author: Abhay Tripathi
+	Description: Saperate View for Book List as it can be called dynamically
+	Acknowledgment: ONLY HTML Design of this file was created with guidance and support from OpenAI's ChatGPT.
+-->
+
 <!-- Book List Section -->
 <section id="book-list" class="container">
 

@@ -2,6 +2,13 @@
 	defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
+<!-- 
+	Author: Abhay Tripathi
+	Description: View Page to Browse and filter through a collection of books
+	Acknowledgment: ONLY HTML Design of this file was created with guidance and support from OpenAI's ChatGPT.
+-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -51,12 +58,19 @@
 		    <!-- Book List Section -->
 		    <?php
 		    	$data['books'] = $books;
+		    	// Load dynamic View for Book Listing and Pagination
 		    	$this->load->view('book-list-ajax-view',$data);
 		    ?>
 		</div>
 
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<!-- 
+			Author: Abhay Tripathi
+			Description: Javascript Logic
+		-->
 		<script type="text/javascript">
+
+			 // function to filter the Books
 			function filterAndGetResult()
 			{
 				event.preventDefault();
@@ -75,6 +89,9 @@
 				    }
 				});
 			}
+
+
+			// function to get next or previous page data
 
 			function pagination(qrStr=null) {
 				event.preventDefault();
