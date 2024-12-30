@@ -35,36 +35,98 @@ header p {
     margin-top: 10px;
 }
 
-/* Filter and Search Section */
+
+
+
+
+
+/* Filter Section Styles */
 #filter-section {
     margin: 20px 0;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Form Container */
 .filter-container {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     gap: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-/* Search box */
+/* Input Fields */
 .search-box {
     padding: 10px;
-    font-size: 1.2em;
-    width: 300px;
+    font-size: 1em;
+    width: 250px;
     border-radius: 5px;
     border: 1px solid #ddd;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease;
 }
 
-/* Genre Dropdown */
-#genre-dropdown {
+.search-box:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* Dropdown */
+#lang-id {
     padding: 10px;
-    font-size: 1.2em;
+    font-size: 1em;
     border-radius: 5px;
     border: 1px solid #ddd;
+    background-color: white;
+    width: 200px;
+    cursor: pointer;
 }
+
+/* Submit Button */
+.submit {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+    background-color: #1abc9c;
+}
+
+
+.filter-container a:hover {
+    color: #1abc9c;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-box,
+    #lang-id {
+        width: 100%;
+    }
+
+    .submit {
+        width: 100%;
+    }
+}
+
 
 /* Book list section */
 #book-list {
@@ -109,23 +171,40 @@ header p {
     font-size: 1.5em;
     margin-top: 15px;
     margin-bottom: 10px;
-    word-wrap: break-word; /* Ensure title doesn't overflow */
+    word-wrap: break-word; /* Ensure text wraps */
     overflow-wrap: break-word;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Truncate overflow with ellipsis */
 }
 
 .book-card .author {
     font-style: italic;
     margin: 10px 0;
+    color: #555;
+    font-size: 1em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* Limit to 1 line */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* Truncate overflow with ellipsis */
 }
 
 .book-card .description {
     font-size: 1em;
     color: #555;
     margin-top: 10px;
-    /*flex-grow: 1;  Allow description to grow, taking up remaining space */
-    word-wrap: break-word; /* Ensure description text wraps */
+    word-wrap: break-word;
     overflow-wrap: break-word;
-    white-space: normal; /* Prevent text from staying on one line */
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .book-card .book-url {
@@ -165,7 +244,7 @@ span.Label-style {
     gap: 20px;
 }
 
-.pagination button {
+.pagination a {
     background-color: #3498db;
     color: white;
     border: none;
@@ -176,7 +255,7 @@ span.Label-style {
     transition: background-color 0.3s;
 }
 
-.pagination button:hover {
+.pagination a:hover {
     background-color: #1abc9c;
 }
 
@@ -185,7 +264,7 @@ span.Label-style {
     color: #333;
 }
 
-.pagination button:disabled {
+.pagination a:disabled {
     background-color: #ddd;
     cursor: not-allowed;
 }
@@ -245,7 +324,7 @@ span.Label-style {
         gap: 10px;
     }
 
-    .pagination button {
+    .pagination a {
         font-size: 1em;
     }
 }
